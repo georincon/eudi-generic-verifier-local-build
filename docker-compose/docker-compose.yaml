@@ -1,0 +1,82 @@
+# avance-verifier (Corporacion Avance). Levantar con:   docker compose up -d --build
+# Antes (una sola vez):                   ./scripts/preparar-entorno.sh
+#
+# Puertos (elegidos para NO chocar con los stacks existentes: 80/443 haproxy-uis, 5256, 5433-5436,
+# 8090, 8095, 8100, 9010):
+#   avance-verifier-api      127.0.0.1:8480 -> 8080
+#   postgres-avance-verifier 127.0.0.1:5437 -> 5432   (solo con --profile persistencia; la app aun no lo usa)
+name: avance-verifier
+
+services:
+  avance-verifier-api:
+    build:
+      context: ../generic-verifier
+      dockerfile: Dockerfile
+    image: avance-verifier:local
+    container_name: avance-verifier-api
+    restart: unless-stopped
+    # el keystore y su contrasena son legibles solo por el usuario del anfitrion (600): se ejecuta con su UID
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    ports:
+      - "${VERIFIER_BIND_ADDRESS:-127.0.0.1}:${VERIFIER_HOST_PORT:-8480}:8080"
+    environment:
+      VERIFIER_PUBLICURL: "${VERIFIER_PUBLICURL:-http://localhost:8480}"
+      VERIFIER_KEYSTORE: "file:/run/pki/verifier-keystore.p12"
+      VERIFIER_WRPRC_FILE: "/run/pki/wrprc.jwt"
+      # contrasenas por archivo (docker secrets) y NO por variable de entorno
+      SPRING_CONFIG_IMPORT: "optional:configtree:/run/secrets/"
+      VERIFIER_TL_PID: "${VERIFIER_TL_PID:-https://civica.avance.org.co/tl-publisher/TL/PID/current.json}"
+      VERIFIER_TL_PUBEAA: "${VERIFIER_TL_PUBEAA:-https://civica.avance.org.co/tl-publisher/TL/PUBEAA/current.json}"
+      VERIFIER_TL_SIGNER_PINS: "${VERIFIER_TL_SIGNER_PINS:-5434f122157c56a9ba09caef1877f62d4f65065e1c560c46533e185338814beb}"
+    volumes:
+      - ./secretos/pki/verifier-keystore.p12:/run/pki/verifier-keystore.p12:ro
+      - ./pki/wrprc.jwt:/run/pki/wrprc.jwt:ro
+    secrets:
+      - source: keystore_password
+        target: verifier.access-certificate.keystore.password
+      - source: keystore_password
+        target: verifier.access-certificate.password
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      # la imagen no trae curl: se comprueba que el puerto acepta conexiones
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080' || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  postgres-avance-verifier:
+    image: postgres:18.4-alpine3.24
+    container_name: postgres-avance-verifier
+    profiles: ["persistencia"]
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: avance_verifier
+      POSTGRES_USER: avance_verifier
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    ports:
+      - "127.0.0.1:${VERIFIER_DB_HOST_PORT:-5437}:5432"
+    volumes:
+      - postgres-avance-verifier-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U avance_verifier -d avance_verifier"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+secrets:
+  keystore_password:
+    file: ./secretos/pki/keystore.pass
+  db_password:
+    file: ./secretos/db.pass
+
+volumes:
+  postgres-avance-verifier-data:

@@ -1,0 +1,18 @@
+@use '/src/template' as temp;
+
+.mdc-list-item__primary-text {
+    color: temp.$textDarkSecondary !important;
+}
+
+.mdc-list-item__secondary-text {
+    color: temp.$textDarkPrimary !important;
+}
+.mdc-list-item.mdc-list-item--with-two-lines {
+  height: fit-content !important;
+}
+.mdc-list-item__secondary-text,
+.mdc-list-item__content {
+  text-overflow: unset !important;
+  white-space: unset !important;
+  overflow: unset !important;
+}

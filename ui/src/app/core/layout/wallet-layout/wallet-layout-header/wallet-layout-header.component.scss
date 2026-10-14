@@ -1,0 +1,19 @@
+@use "/src/template" as temp;
+@use "sass:map";
+
+:host {
+  border: none;
+  border-bottom: 1px;
+  border-bottom-color: map.get(
+    map.get(map.get(temp.$palette, general), divider),
+    dark
+  );
+  border-bottom-style: solid;
+  align-items: center;
+  box-shadow: 0px 1px 20px rgb(207, 207, 207);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

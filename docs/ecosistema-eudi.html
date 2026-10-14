@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa del ecosistema EUDI</title>
+<style>
+  :root {
+    --bg: #faf8f4; --fg: #1f1d1a; --muted: #6b665e; --card: #ffffff; --line: #d9d3c7;
+    --wallet: #3b6fd4; --verifier: #2f9e63; --issuer: #d4503b; --book: #c9921c; --bad: #c0392b; --ok: #2f9e63;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15140f; --fg: #ece8df; --muted: #a39e93; --card: #1f1d17; --line: #3a362c;
+      --wallet: #6c9bff; --verifier: #4fc88a; --issuer: #ff7f69; --book: #e4b445; --bad: #ff6b5b; --ok: #4fc88a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 system-ui, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 8px; }
+  p, li { color: var(--fg); }
+  .sub { color: var(--muted); margin: 0 0 8px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 12px 0; }
+  svg { width: 100%; height: auto; display: block; }
+  svg text { fill: var(--fg); font: 14px system-ui, sans-serif; }
+  svg .muted { fill: var(--muted); font-size: 12.5px; }
+  svg .title { font-weight: 700; font-size: 15px; }
+  .box { fill: var(--card); stroke-width: 2.5; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  code { font: .88em ui-monospace, monospace; background: color-mix(in srgb, var(--line) 50%, transparent); padding: 1px 5px; border-radius: 4px; }
+  .chain { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 640px) { .chain { grid-template-columns: 1fr; } }
+  .doll { border: 2px solid var(--line); border-radius: 10px; padding: 8px 10px; margin: 6px 0 6px 0; }
+  .doll .doll { margin-left: 14px; }
+  .tag { display: inline-block; font-size: .78rem; font-weight: 700; padding: 1px 8px; border-radius: 99px; color: #fff; }
+  .tag.ok { background: var(--ok); } .tag.bad { background: var(--bad); }
+  ol { padding-left: 1.2rem; } li { margin: 6px 0; }
+  .note { color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mapa del ecosistema EUDI</h1>
+  <p class="sub">Quién confía en quién, y qué libreta consulta cada uno. Datos leídos de las listas reales el 13-oct-2026.</p>
+
+  <h2>1. Los actores y las dos direcciones de confianza</h2>
+  <div class="card">
+    <svg viewBox="0 0 800 400" role="img" aria-label="Wallet, verifier y emisor, con las libretas de confianza que consulta cada uno">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M0 0L10 5L0 10z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <!-- actores -->
+      <rect class="box" x="20"  y="40" width="200" height="90" rx="12" stroke="var(--issuer)"/>
+      <text class="title" x="120" y="72" text-anchor="middle">Emisor</text>
+      <text class="muted" x="120" y="94" text-anchor="middle">fabrica la credencial</text>
+      <text class="muted" x="120" y="112" text-anchor="middle">y la sella (firma)</text>
+
+      <rect class="box" x="300" y="40" width="200" height="90" rx="12" stroke="var(--wallet)"/>
+      <text class="title" x="400" y="72" text-anchor="middle">Wallet</text>
+      <text class="muted" x="400" y="94" text-anchor="middle">tu bolsillo digital;</text>
+      <text class="muted" x="400" y="112" text-anchor="middle">tú decides qué enseñar</text>
+
+      <rect class="box" x="580" y="40" width="200" height="90" rx="12" stroke="var(--verifier)"/>
+      <text class="title" x="680" y="72" text-anchor="middle">Verifier</text>
+      <text class="muted" x="680" y="94" text-anchor="middle">pide y comprueba</text>
+      <text class="muted" x="680" y="112" text-anchor="middle">(nuestro proyecto)</text>
+
+      <!-- flechas del flujo -->
+      <g stroke="var(--fg)" stroke-width="2" fill="none" color="var(--fg)">
+        <line x1="222" y1="85" x2="298" y2="85" marker-end="url(#a)"/>
+        <line x1="578" y1="70" x2="502" y2="70" marker-end="url(#a)"/>
+        <line x1="502" y1="108" x2="578" y2="108" marker-end="url(#a)"/>
+      </g>
+      <text class="muted" x="260" y="76" text-anchor="middle">emite</text>
+      <text class="muted" x="540" y="62" text-anchor="middle">1 solicita</text>
+      <text class="muted" x="540" y="126" text-anchor="middle">2 presenta</text>
+
+      <!-- libretas -->
+      <rect class="box" x="300" y="230" width="230" height="110" rx="12" stroke="var(--book)"/>
+      <text class="title" x="415" y="256" text-anchor="middle">Libreta "quién puede PEDIR"</text>
+      <text class="muted" x="415" y="278" text-anchor="middle">WRPACProviders: CA que dan</text>
+      <text class="muted" x="415" y="296" text-anchor="middle">el carnet de portero</text>
+      <text class="muted" x="415" y="320" text-anchor="middle">la consulta la WALLET</text>
+
+      <rect class="box" x="560" y="230" width="220" height="110" rx="12" stroke="var(--book)"/>
+      <text class="title" x="670" y="256" text-anchor="middle">Libreta "quién puede EMITIR"</text>
+      <text class="muted" x="670" y="278" text-anchor="middle">PIDProviders, PubEAAProviders…</text>
+      <text class="muted" x="670" y="296" text-anchor="middle">CA de los emisores</text>
+      <text class="muted" x="670" y="320" text-anchor="middle">la consulta el VERIFIER</text>
+
+      <g stroke="var(--book)" stroke-width="2" stroke-dasharray="6 5" fill="none" color="var(--book)">
+        <line x1="400" y1="132" x2="400" y2="228" marker-end="url(#a)"/>
+        <line x1="680" y1="132" x2="680" y2="228" marker-end="url(#a)"/>
+      </g>
+      <text class="muted" x="392" y="185" text-anchor="end">¿puede pedirme esto?</text>
+      <text class="muted" x="688" y="185">¿puedo fiarme del sello?</text>
+
+      <rect class="box" x="20" y="230" width="240" height="110" rx="12" stroke="var(--line)"/>
+      <text class="title" x="140" y="256" text-anchor="middle">Pizarra de revocación</text>
+      <text class="muted" x="140" y="278" text-anchor="middle">status list: un cuadrito por</text>
+      <text class="muted" x="140" y="296" text-anchor="middle">credencial; tachado = revocada</text>
+      <text class="muted" x="140" y="320" text-anchor="middle">la mira el VERIFIER</text>
+      <g stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 4" fill="none" color="var(--muted)">
+        <line x1="120" y1="132" x2="120" y2="228" marker-end="url(#a)"/>
+      </g>
+      <text class="muted" x="128" y="185">la publica el emisor</text>
+    </svg>
+    <p class="note">Una libreta no dice si la credencial es verdadera: dice que <em>el sello</em> pertenece a alguien autorizado. Una libreta distinta responde una pregunta distinta.</p>
+  </div>
+
+  <h2>2. Las libretas reales de la Comisión (referencia de desarrollo)</h2>
+  <div class="card">
+    <table>
+      <tr><th>Lista</th><th>Pregunta</th><th>Contenido</th><th>Emitida</th></tr>
+      <tr><td><code>PIDProviders</code></td><td>¿Quién puede emitir PID?</td><td>7 emisores (CZ, EE, EU, LU, NL, PT, UT), cada uno con servicio de emisión y de revocación</td><td>29-sep-2026</td></tr>
+      <tr><td><code>WRPACProviders</code></td><td>¿Quién da carnets de portero?</td><td>14 emisores: 7 <code>PID Issuer CA 02</code> y 7 <code>WRPAC Issuer CA</code> (nuevos, cambió el 7-oct)</td><td>7-oct-2026</td></tr>
+      <tr><td><code>WRPRCProviders</code></td><td>¿Quién da el "cartel" de lo permitido?</td><td>14 servicios (emisión y revocación)</td><td>6-oct-2026</td></tr>
+      <tr><td><code>PubEAAProviders</code></td><td>¿Quién emite atestaciones públicas?</td><td>14 servicios</td><td>29-sep-2026</td></tr>
+    </table>
+    <p class="note">Las cuatro vienen firmadas con un certificado de desarrollo (<code>CN=PY PID Issuer DEV</code>). Son de pruebas, no la lista oficial de producción.</p>
+  </div>
+
+  <h2>3. Las muñecas rusas: por qué rechazó tu wallet</h2>
+  <div class="chain">
+    <div class="card">
+      <span class="tag bad">Nuestro verifier de prueba</span>
+      <div class="doll"><strong>verifier</strong> <span class="muted">(la que viaja)</span>
+        <div class="doll"><strong>intermediate</strong> <span class="muted">(viaja)</span>
+          <div class="doll"><strong>root</strong> <span class="muted">autofirmada, no viaja</span></div>
+        </div>
+      </div>
+      <p>La wallet busca esa <code>root</code> en la libreta. <strong>No está.</strong> Resultado: <em>"no pude verificar a la parte receptora"</em>.</p>
+    </div>
+    <div class="card">
+      <span class="tag ok">Un verifier aceptado</span>
+      <div class="doll"><strong>carnet del verifier</strong>
+        <div class="doll"><strong>CA que lo emitió</strong>
+          <div class="doll"><strong>WRPAC Issuer CA</strong> <span class="muted">apuntada en la libreta</span></div>
+        </div>
+      </div>
+      <p>La cadena llega a una muñeca grande que <strong>sí está</strong> en <code>WRPACProviders</code>. La wallet acepta y muestra la pantalla de consentimiento.</p>
+    </div>
+  </div>
+
+  <h2>4. Lo que debe comprobar el verifier, en orden</h2>
+  <div class="card">
+    <ol>
+      <li><strong>Firmar la solicitud con un carnet válido</strong> (WRPAC de una CA de la libreta "quién puede pedir").</li>
+      <li><strong>Pedir solo lo permitido</strong> (coherente con el certificado de registro, WRPRC).</li>
+      <li><strong>Comprobar el sello del emisor</strong> y que su cadena llegue a la libreta "quién puede emitir". El <code>core</code> de referencia confía en todos por defecto: esto lo construimos nosotros.</li>
+      <li><strong>Mirar la pizarra</strong> de revocación (y verificar la firma de la propia pizarra, que el <code>core</code> hoy no hace).</li>
+      <li><strong>Comprobar que la respuesta es para esta conversación</strong> (<code>nonce</code> y <code>aud</code>).</li>
+      <li><strong>No guardar de más</strong>: para edad, solo "mayor de 18", no la fecha de nacimiento.</li>
+    </ol>
+  </div>
+
+  <p class="note">Simplificado a propósito. No cubre el detalle legal de cómo cada Estado miembro gobierna sus listas ni cómo se obtiene un WRPAC en cada país.</p>
+</main>
+</body>
+</html>

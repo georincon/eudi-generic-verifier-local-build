@@ -1,0 +1,14 @@
+# OPCIONAL. Une el verifier a la red del haproxy-uis para publicarlo bajo el dominio compartido (/verifier).
+# No modifica los otros stacks: solo conecta este contenedor a su red (la misma que usa spartans-wallet-provider).
+#   docker compose -f docker-compose.yaml -f docker-compose.haproxy.yaml up -d
+# Despues, el responsable del haproxy debe aplicar haproxy/verifier.snippet.cfg (ver README).
+services:
+  avance-verifier-api:
+    networks:
+      - default
+      - uis-issuer
+
+networks:
+  uis-issuer:
+    name: uis-issuer_default
+    external: true

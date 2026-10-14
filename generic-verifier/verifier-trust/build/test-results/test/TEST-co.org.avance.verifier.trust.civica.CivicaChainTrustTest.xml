@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:45:40.728Z" hostname="Biogeo" time="0.108">
+  <properties/>
+  <testcase name="una lista caducada se rechaza()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.014"/>
+  <testcase name="el verificador exige al menos un firmante fijado()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.001"/>
+  <testcase name="una lista alterada se rechaza()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.007"/>
+  <testcase name="dentro del TTL no se vuelve a descargar la lista()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.01"/>
+  <testcase name="si falla la actualizacion y la copia caduco no hay confianza()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.012"/>
+  <testcase name="una lista firmada por un firmante no fijado se rechaza()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.005"/>
+  <testcase name="se rechaza una lista distinta de la esperada para el contexto()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.007"/>
+  <testcase name="la raiz de la UIS es de confianza para credenciales PubEAA()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.007"/>
+  <testcase name="si falla la actualizacion se usa la copia mientras no haya caducado()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.012"/>
+  <testcase name="la raiz de la UIS no es de confianza para PID, que tiene su propia lista()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.006"/>
+  <testcase name="una CA ajena no es de confianza()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.006"/>
+  <testcase name="un contexto sin lista configurada no da confianza()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.003"/>
+  <testcase name="no hay confianza si la lista es inaccesible y no hay copia()" classname="co.org.avance.verifier.trust.civica.CivicaChainTrustTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[oct 14, 2026 4:45:40 P. M. co.org.avance.verifier.trust.civica.CivicaChainTrust anchorsFor
+ADVERTENCIA: No se pudo actualizar PUBEAA (HTTP 503); se usa la copia vigente
+]]></system-err>
+</testsuite>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avance Verifier · Verificar certificaciones</title>
+    <link rel="stylesheet" th:href="${base} + '/webjars/bootstrap/css/bootstrap.min.css'">
+    <link rel="stylesheet" th:href="${base} + '/public/css/main.css'">
+</head>
+<body th:attr="data-base=${base}">
+<main>
+    <div class="container p-4">
+        <div class="cv-header mb-4">
+            <h1 class="h3 mb-0">Verificar certificaciones académicas</h1>
+            <p class="mb-0">Proceso de contratación · Corporación Avance</p>
+        </div>
+
+        <!-- 1. Inicio -->
+        <section id="step-start" class="lookup-card text-center">
+            <p class="mb-4">Genere un código QR y pida a la persona candidata que lo escanee con su billetera digital.</p>
+            <button id="btn-start" type="button" class="btn btn-cv">Generar código QR</button>
+            <p id="start-error" class="text-danger mt-3 cv-hidden" role="alert"></p>
+        </section>
+
+        <!-- 2. Esperando a la billetera -->
+        <section id="step-wait" class="lookup-card text-center cv-hidden" aria-live="polite">
+            <h2 class="section-title h5">Escanee con su billetera digital</h2>
+            <div class="qr-container"><img id="qr" class="qr-code" alt="Código QR de la solicitud de verificación" src=""></div>
+            <p><span class="cv-spinner" aria-hidden="true"></span><span id="status-text">Esperando a la billetera…</span></p>
+            <p class="small text-muted">Vence en <strong id="countdown">10:00</strong></p>
+            <details class="text-start small mb-3">
+                <summary>Abrir en este dispositivo</summary>
+                <p class="mt-2 mb-0"><a id="same-device" href="#">Abrir con la billetera de este teléfono</a></p>
+            </details>
+            <button id="btn-cancel" type="button" class="btn btn-cv-outline">Cancelar</button>
+        </section>
+
+        <!-- 3. Resultado -->
+        <section id="step-result" class="cv-hidden" aria-live="polite">
+            <div id="result-box" class="cv-result">
+                <h2 id="result-headline" class="h4"></h2>
+                <dl id="result-attrs" class="cv-attr"></dl>
+                <p class="small text-muted mt-3 mb-0">La credencial se comprobó antes de mostrarse: firma del emisor, institución de confianza y prueba de posesión del titular.</p>
+            </div>
+            <div class="text-center mt-4">
+                <button id="btn-again" type="button" class="btn btn-cv">Nueva verificación</button>
+            </div>
+        </section>
+
+        <div class="mt-3"><a th:href="${base} + '/'">Volver al inicio</a></div>
+        <div class="cv-footer-accent"></div>
+    </div>
+</main>
+<script th:src="${base} + '/public/js/verify.js'"></script>
+</body>
+</html>

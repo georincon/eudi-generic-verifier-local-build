@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - una prueba de posesion dirigida a otro verificador se rechaza()</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<a class="breadcrumb" href="../index.html">all</a> &gt; 
+<a class="breadcrumb" href="index.html">co.org.avance.verifier.api.AcademicWalletFlowTest</a> &gt; 
+<span class="breadcrumb">una prueba de posesion dirigida a otro verificador se rechaza()</span>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="successGroup" href="#">Gradle Test Run :verifier-api:test</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Gradle Test Run :verifier-api:test</h2>
+<h1>una prueba de posesion dirigida a otro verificador se rechaza()</h1>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="" href="#">summary</a>
+</li>
+<li>
+<a class="" href="#">standard output</a>
+</li>
+<li>
+<a class="" href="#">error output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>summary</h2>
+<div>
+<div class="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>skipped</p>
+</div>
+</td>
+<td>
+<div class="infoBox duration">
+<div class="counter">1.100s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="tab">
+<h2>standard output</h2>
+<span class="code">
+<pre id="root-0-test-stdout-una prueba de posesion dirigida a otro verificador se rechaza()">2026-10-14T16:51:06.317-05:00  INFO 997980 --- [avance-verifier] [-1 @coroutine#3] EVENTS                                   : Verifier initialized transaction - tx: gO6XulPQDFLTlt8q63RE4jOW4ZQv79flL5xcWrUtuLJ0kpE-GXE4vS6fYOxxgLKm7hLGRfVrUkKfEeOHOjUMJQ
+2026-10-14T16:51:06.385-05:00  INFO 997980 --- [avance-verifier] [-2 @coroutine#4] c.org.avance.verifier.api.web.WalletApi  : Handling GetRequestObject for 7wooO4Zjye_h1iog6Jr2BpydQ7uqFY9WYBiQC8T-h6vV08ZNd2jz9x3zwinRpiQyKt7nX1e_wgK_MqKgu7SrZQ ...
+2026-10-14T16:51:06.435-05:00  INFO 997980 --- [avance-verifier] [-1 @coroutine#4] EVENTS                                   : Wallet retrieved Request Object - tx: gO6XulPQDFLTlt8q63RE4jOW4ZQv79flL5xcWrUtuLJ0kpE-GXE4vS6fYOxxgLKm7hLGRfVrUkKfEeOHOjUMJQ
+2026-10-14T16:51:06.488-05:00  INFO 997980 --- [avance-verifier] [-3 @coroutine#5] c.org.avance.verifier.api.web.WalletApi  : Handling PostWalletResponse ...
+2026-10-14T16:51:06.501-05:00  INFO 997980 --- [avance-verifier] [-1 @coroutine#5] c.o.a.v.p.port.input.PostWalletResponse  : TransactionId(gO6XulPQDFLTlt8q63RE4jOW4ZQv79flL5xcWrUtuLJ0kpE-GXE4vS6fYOxxgLKm7hLGRfVrUkKfEeOHOjUMJQ):: Wallet posted response. 
+VP Token: '{&quot;academic&quot;:[&quot;eyJ4NWMiOlsiTUlJQlh6Q0NBUWFnQXdJQkFnSUdBYUU4WmNCNk1Bb0dDQ3FHU000OUJBTUNNQnN4R1RBWEJnTlZCQU1NRUhSbGMzUXRhWE56ZFdWeUxYSnZiM1F3SGhjTk1qWXhNREUwTWpFMU1EQXpXaGNOTWpZeE1ERTFNakUxTVRBeldqQVpNUmN3RlFZRFZRUUREQTUwWlhOMExXbHpjM1ZsY2kxa2N6QlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJBbFEzengyQi9mMVJHbTg4T0FzQUQ1Ukpqem13dkdTVSs5ZWpZWDBlb3BocVdBMmQ5ZmFId2JaTXVCVUJncnI5RXQ5aThOR3hYTitseXU2R0NBMHl6bWpPREEyTUF3R0ExVWRFd0VCL3dRQ01BQXdEZ1lEVlIwUEFRSC9CQVFEQWdlQU1CWUdBMVVkRVFRUE1BMkNDMmx6YzNWbGNpNTBaWE4wTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUdCenVtVERTdWJ0MmFydmxOZkdlOEMzQjNRR2FIek5aU2MrRkpSMTBBN2dBaUFrQkU3cERHNmNHb2JQclpta3FSWXphQjY3bGl2RzA0TDVPQ0ttUElsSzF3PT0iXSwidHlwIjoiZGMrc2Qtand0IiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2lzc3Vlci50ZXN0IiwiaWF0IjoxNzkyMDE0NjY2LCJleHAiOjE3OTIwMTgyNjYsInZjdCI6InVybjpldWRpOmFjYWRlbWljOmNyZWRlbnRpYWw6MSIsIl9zZF9hbGciOiJzaGEtMjU2IiwiX3NkIjpbInV2TW1BOG8wYWdLcXZIaHNjZ21pQ1I1bGpwWEczazlsVnV3NlplY2M0c2siLCJlTGRlTWczWlNkQTBKUWFkTEZMOTNHMmVZZWotWFZESzEwb09XOHBZNWhvIiwiTGNDY19kSnRMd2hMTTFWSjZHdVUwd0dseWI3ZmZSZDRrUVRZMlQzUUNHWSIsImRYOXJreDZEb2dyLU1POENvU3FBZ1J4TGl3M0dvdmdTQ294cDhTT25zcGsiLCI4TnZZVFpPX2JHSkY4RF95aTU2MFM1MURiQTI4dTYxbzlwZ3hSejFaNG80IiwiYVpMV2w1RmtQcUlQSVI3SnFKNzVvWDR6cWk0Sy1CWVZtNGRrdjlval9RbyIsInQxLXFFVFBFS2FqOW5KVFN4UFZtWUR3TXZjbkxZbGpsUm5mSVVPb21HRjgiXSwiY25mIjp7Imp3ayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6InVCZkxVa1dxWTJER3B4aHRwUkNJNDVCdzU0bGdwVm9jVVVuZDVNc3VNZm8iLCJ5IjoiUFBLdGtOOUU0eEk2OHFQZkFYM21KOHFRcGEyYTlGNkZaNGwwMjQ3eXd1ZyJ9fX0.A7AHg_HZVSbnxPpXWrZhl00dmwPod3WkeCXCwmTtNXxRcEBCcigyVw2R7X9_DlER9NB4APQkf263KQ7yxZR3FQ~WyJmWkJ4Q2FtSE4wVUVES29nMUJYcm9BIiwiaXNzdWluZ19pbnN0aXR1dGlvbl9uYW1lIiwiVW5pdmVyc2lkYWQgZGUgUHJ1ZWJhIl0~WyJuRjRhbkRIRnhXSXRjSjFZSWNYRmJnIiwiYXdhcmRlZF90aXRsZSIsIkluZ2VuaWVybyBkZSBTaXN0ZW1hcyJd~WyJhRVM1a2lfQnowYkVhdVFTWnM4NTVBIiwicHJvZ3JhbV9uYW1lIiwiSW5nZW5pZXLDrWEgZGUgU2lzdGVtYXMiXQ~WyJLMFNWNFZNeGlIdEh6Wk9WdDFvc3VnIiwiYWNhZGVtaWNfc3RhdHVzIiwiR1JBRFVBRE8iXQ~WyIxWVhKeGxWeTZzZUtvckZhV0VMNV9RIiwiZ3JhZHVhdGlvbl9kYXRlIiwiMjAyNC0xMi0xMyJd~WyJLQktkRlZOUE5GZ28yYUhOSHZRY01nIiwiZmFtaWx5X25hbWUiLCJQw6lyZXoiXQ~WyJaT1U2NTBuRVNLUlZwWmloVUt1VGN3IiwiZ2l2ZW5fbmFtZSIsIkFuYSJd~eyJ0eXAiOiJrYitqd3QiLCJhbGciOiJFUzI1NiJ9.eyJpYXQiOjE3OTIwMTQ2NjYsImF1ZCI6Ing1MDlfaGFzaDpvdHJvLXZlcmlmaWNhZG9yIiwibm9uY2UiOiJLT0lfaHZYWE90VF8zdUJCdFlFdGktalhhUmp4TkIzc2pYU25tY3JlRUhzIiwic2RfaGFzaCI6Imo0YWhIWnhZTWhTOHY2VllpelpWRVZDS2lGcFhiWGNlVDJZUzRxelE1LVEifQ.lt16eQlMNF7LgmnalKAQ5ijWbpqOmXACJg52P570tDQ7McugL2NT2i4QMAytan_90a4_D2DzceMJ2PtU7w10tA&quot;]}'
+2026-10-14T16:51:06.643-05:00 ERROR 997980 --- [avance-verifier] [-3 @coroutine#5] c.o.a.v.p.a.o.sdjwtvc.SdJwtVcValidator   : SD-JWT-VC validation failed: keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT aud claim value rejected
+
+SdJwtVerificationException(reason=KeyBindingFailed(details=InvalidKeyBindingJwt(message=Could not verify KeyBinding JWT, cause=com.nimbusds.jwt.proc.BadJWTException: JWT aud claim value rejected)))
+	at eu.europa.ec.eudi.sdjwt.SdJwtVerifierKt.asException(SdJwtVerifier.kt:109) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.SdJwtVerifierKt.asException(SdJwtVerifier.kt:280) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.KeyBindingVerifierOps$Companion$invoke$1.verify_7wntdgo$mustBePresentAndValid(SdJwtVerifier.kt:257) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.KeyBindingVerifierOps$Companion$invoke$1.access$verify_7wntdgo$mustBePresentAndValid(SdJwtVerifier.kt:243) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.KeyBindingVerifierOps$Companion$invoke$1$verify_7wntdgo$mustBePresentAndValid$1.invokeSuspend(SdJwtVerifier.kt) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34) ~[kotlin-stdlib-2.4.0.jar:2.4.0-release-281]
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWithInternal(DispatchedContinuation.kt:384) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.DispatchedCoroutine.afterResume(Builders.common.kt:588) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:101) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:47) ~[kotlin-stdlib-2.4.0.jar:2.4.0-release-281]
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+
+2026-10-14T16:51:06.647-05:00  WARN 997980 --- [avance-verifier] [-3 @coroutine#5] teSdJwtVcOrMsoMdocVerifiablePresentation : Failed to validate SD-JWT VC: [{&quot;error&quot;:&quot;ContainsInvalidKeyBindingJwt&quot;,&quot;description&quot;:&quot;keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT aud claim value rejected&quot;}]
+2026-10-14T16:51:06.647-05:00  WARN 997980 --- [avance-verifier] [-3 @coroutine#5] EVENTS                                   : Wallet failed to post response. Cause InvalidVpToken(message=[{&quot;error&quot;:&quot;ContainsInvalidKeyBindingJwt&quot;,&quot;description&quot;:&quot;keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT aud claim value rejected&quot;}], cause=null) - tx: gO6XulPQDFLTlt8q63RE4jOW4ZQv79flL5xcWrUtuLJ0kpE-GXE4vS6fYOxxgLKm7hLGRfVrUkKfEeOHOjUMJQ
+2026-10-14T16:51:06.647-05:00 ERROR 997980 --- [avance-verifier] [-3 @coroutine#5] c.org.avance.verifier.api.web.WalletApi  : InvalidVpToken(message=[{&quot;error&quot;:&quot;ContainsInvalidKeyBindingJwt&quot;,&quot;description&quot;:&quot;keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT aud claim value rejected&quot;}], cause=null) while handling post of wallet response 
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stdout-una prueba de posesion dirigida a otro verificador se rechaza()">Copy</button>
+</span>
+</div>
+<div class="tab">
+<h2>error output</h2>
+<span class="code">
+<pre id="root-0-test-stderr-una prueba de posesion dirigida a otro verificador se rechaza()">Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/geovani/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.18.10/9426d28828bdcdf42666bb7a68c468279ea78f59/byte-buddy-agent-1.18.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stderr-una prueba de posesion dirigida a otro verificador se rechaza()">Copy</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.6.1</a> at 14 oct 2026, 16:51:12</p>
+</div>
+</div>
+</body>
+</html>

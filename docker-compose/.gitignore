@@ -1,0 +1,3 @@
+# claves privadas y contrasenas de la PKI: nunca al repositorio
+secretos/
+.env

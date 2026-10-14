@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.trust.LoteChainTrustTest" tests="9" skipped="1" failures="0" errors="0" timestamp="2026-10-14T21:45:39.789Z" hostname="Biogeo" time="0.936">
+  <properties/>
+  <testcase name="una lista firmada por un firmante no fijado se rechaza aunque la firma sea valida()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.497"/>
+  <testcase name="una cadena de una CA ajena no es de confianza()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.036"/>
+  <testcase name="la huella se calcula como SHA-256 en hexadecimal()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.007"/>
+  <testcase name="una lista firmada por el firmante fijado se acepta()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.023"/>
+  <testcase name="una cadena que llega a una CA de la libreta es de confianza()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.022"/>
+  <testcase name="la cadena de ejemplo del upstream no pasa un validador estricto aunque su raiz este en la libreta()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.043"/>
+  <testcase name="un contexto que ninguna lista cubre no da confianza()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.009"/>
+  <testcase name="contra la libreta real, una CA WRPAC de la lista es de confianza y una ajena no()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="el verificador rechaza un JWT alterado()" classname="co.org.avance.verifier.trust.LoteChainTrustTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

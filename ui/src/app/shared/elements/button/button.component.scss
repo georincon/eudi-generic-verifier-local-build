@@ -1,0 +1,37 @@
+@use '/src/template' as temp;
+@use "sass:map";
+
+:host {
+    button {
+        &:disabled {
+            cursor: none;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        border: 0;
+        border-radius: 16px;
+        color: hsl(0deg 0% 99%);
+        cursor: pointer;
+        font-size: 16px;
+        height: 48px;
+        padding: 1rem;
+        transition: background 225ms ease-in-out 0s;
+        user-select: none;
+        width: fit-content;
+
+        &.primary {
+            background: map.get(map.get(temp.$palette, color), primary);
+        }
+
+        &.secondary {
+            background: temp.$backgroundPaper;
+            border: 1px;
+            border-color: temp.$dividerDark;
+            border-radius: 1em;
+            border-style: solid;
+            color: rgb(0 0 0);
+        }
+    }
+
+}

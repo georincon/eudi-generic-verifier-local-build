@@ -1,0 +1,20 @@
+{
+  "/ui": {
+    "target": "https://dev.verifier-backend.eudiw.dev",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/wallet": {
+    "target": "https://dev.verifier-backend.eudiw.dev",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/utilities": {
+    "target": "https://dev.verifier-backend.eudiw.dev",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

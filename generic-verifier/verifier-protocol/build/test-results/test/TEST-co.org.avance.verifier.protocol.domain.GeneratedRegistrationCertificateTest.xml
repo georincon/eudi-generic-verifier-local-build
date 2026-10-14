@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.protocol.domain.GeneratedRegistrationCertificateTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:45:42.359Z" hostname="Biogeo" time="0.029">
+  <properties/>
+  <testcase name="el WRPRC generado por el script lo acepta el parser del protocolo()" classname="co.org.avance.verifier.protocol.domain.GeneratedRegistrationCertificateTest" time="0.028"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - una credencial firmada con otra clave distinta de la de su certificado se rechaza()</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<a class="breadcrumb" href="../index.html">all</a> &gt; 
+<a class="breadcrumb" href="index.html">co.org.avance.verifier.api.AcademicWalletFlowTest</a> &gt; 
+<span class="breadcrumb">una credencial firmada con otra clave distinta de la de su certificado se rechaza()</span>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="successGroup" href="#">Gradle Test Run :verifier-api:test</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Gradle Test Run :verifier-api:test</h2>
+<h1>una credencial firmada con otra clave distinta de la de su certificado se rechaza()</h1>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="" href="#">summary</a>
+</li>
+<li>
+<a class="" href="#">standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>summary</h2>
+<div>
+<div class="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>skipped</p>
+</div>
+</td>
+<td>
+<div class="infoBox duration">
+<div class="counter">0.041s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="tab">
+<h2>standard output</h2>
+<span class="code">
+<pre id="root-0-test-stdout-una credencial firmada con otra clave distinta de la de su certificado se rechaza()">2026-10-14T16:51:06.956-05:00  INFO 997980 --- [avance-verifier] [3 @coroutine#29] EVENTS                                   : Verifier initialized transaction - tx: jzid2OkFQgiQE8AdDphn_f7e1m4AUKWy9gxNxRzyBigzNJiO38wDsesPYQsZAUUj8T1Jv6khHvxEukDPn96knA
+2026-10-14T16:51:06.961-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#30] c.org.avance.verifier.api.web.WalletApi  : Handling GetRequestObject for qGTyGDL0BR2LgieeD6whJGQKP0ZkR9WFwlD30YiLJ7eB44kOhC0PRnV2KG7lcu2oYlULfmRVDNGkrTRuTqyAuw ...
+2026-10-14T16:51:06.963-05:00  INFO 997980 --- [avance-verifier] [3 @coroutine#30] EVENTS                                   : Wallet retrieved Request Object - tx: jzid2OkFQgiQE8AdDphn_f7e1m4AUKWy9gxNxRzyBigzNJiO38wDsesPYQsZAUUj8T1Jv6khHvxEukDPn96knA
+2026-10-14T16:51:06.971-05:00  INFO 997980 --- [avance-verifier] [2 @coroutine#31] c.org.avance.verifier.api.web.WalletApi  : Handling PostWalletResponse ...
+2026-10-14T16:51:06.973-05:00  INFO 997980 --- [avance-verifier] [3 @coroutine#31] c.o.a.v.p.port.input.PostWalletResponse  : TransactionId(jzid2OkFQgiQE8AdDphn_f7e1m4AUKWy9gxNxRzyBigzNJiO38wDsesPYQsZAUUj8T1Jv6khHvxEukDPn96knA):: Wallet posted response. 
+VP Token: '{&quot;academic&quot;:[&quot;eyJ4NWMiOlsiTUlJQlh6Q0NBUWFnQXdJQkFnSUdBYUU4WmNCNk1Bb0dDQ3FHU000OUJBTUNNQnN4R1RBWEJnTlZCQU1NRUhSbGMzUXRhWE56ZFdWeUxYSnZiM1F3SGhjTk1qWXhNREUwTWpFMU1EQXpXaGNOTWpZeE1ERTFNakUxTVRBeldqQVpNUmN3RlFZRFZRUUREQTUwWlhOMExXbHpjM1ZsY2kxa2N6QlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJBbFEzengyQi9mMVJHbTg4T0FzQUQ1Ukpqem13dkdTVSs5ZWpZWDBlb3BocVdBMmQ5ZmFId2JaTXVCVUJncnI5RXQ5aThOR3hYTitseXU2R0NBMHl6bWpPREEyTUF3R0ExVWRFd0VCL3dRQ01BQXdEZ1lEVlIwUEFRSC9CQVFEQWdlQU1CWUdBMVVkRVFRUE1BMkNDMmx6YzNWbGNpNTBaWE4wTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUdCenVtVERTdWJ0MmFydmxOZkdlOEMzQjNRR2FIek5aU2MrRkpSMTBBN2dBaUFrQkU3cERHNmNHb2JQclpta3FSWXphQjY3bGl2RzA0TDVPQ0ttUElsSzF3PT0iXSwidHlwIjoiZGMrc2Qtand0IiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2lzc3Vlci50ZXN0IiwiaWF0IjoxNzkyMDE0NjY2LCJleHAiOjE3OTIwMTgyNjYsInZjdCI6InVybjpldWRpOmFjYWRlbWljOmNyZWRlbnRpYWw6MSIsIl9zZF9hbGciOiJzaGEtMjU2IiwiX3NkIjpbIjNsMmhlZnIzdnk5WVlEbHhlU3IyQk83Tjg3Q3IxX3lwM1p1UHMzOHVsdXciLCJURXhDaTZCcmxmN0hhSkxVM0tyUmViTV9FcE1kV3BrYmFrenExWFVPbXRRIiwidm55TTU0UGQzbk11dWNiaGlXZWhoeWFDSVI2SjA0ajlTVjlYRmpvVnRfayIsIkRZdEM4Y012emZEUEhCMHdwNEJlNlMydXpYLXY1U01lRkE2Q21TMFYyeFUiLCJNclhLTGt3bUhxNWtqeHQzUVlCd3hjTEx0UHlKbm56N1NmaWhSWHVUenJRIiwiSmtoS2J6T09jV2tfV3RDSFFYYnlyT0FxQWpQNnpCaTlBWkd2U0VlYzJKZyIsIjRnTGV1Yl92YlM4UmRvb2UwdkhUYnkwSjhseFpacENQbTJPdjRkc3RycDgiXSwiY25mIjp7Imp3ayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6InpTd25VZkVBWW9rMFlldFF2dXBBelB1aXQ1T0NLc01VSWVKQXYzcXRjU0UiLCJ5IjoiOFBGOVgxbG5SQVMwQjBJR0E0RnQxRTc4U1N3aDA3WmkxdnhvNnFqVkhQWSJ9fX0.DxssXUUZ_Kw1XnH5BOMdHtWlAHJY3HmVyZ1-cNTye_z3cCvw3VHpXw4913k8HA1Yc2ocy9hZiLy5jfGPveQlnA~WyJZOFZYOXV6XzFvYmE2dW5HWWdabUZRIiwiaXNzdWluZ19pbnN0aXR1dGlvbl9uYW1lIiwiVW5pdmVyc2lkYWQgZGUgUHJ1ZWJhIl0~WyJib1NOMWNnbGpWSkdadWZZZDJDeVJnIiwiYXdhcmRlZF90aXRsZSIsIkluZ2VuaWVybyBkZSBTaXN0ZW1hcyJd~WyJBWW9vTzlybzFFTU1Hb1dnM2cwV2p3IiwicHJvZ3JhbV9uYW1lIiwiSW5nZW5pZXLDrWEgZGUgU2lzdGVtYXMiXQ~WyI2QVRhVUZZUnhLcHBBWGZncGVSaXZRIiwiYWNhZGVtaWNfc3RhdHVzIiwiR1JBRFVBRE8iXQ~WyI2dFZIbEVIZklZcm9VeldkbFpObXJRIiwiZ3JhZHVhdGlvbl9kYXRlIiwiMjAyNC0xMi0xMyJd~WyJxdEJsVzFQZHM3R3R6N0I1enpwZmZRIiwiZmFtaWx5X25hbWUiLCJQw6lyZXoiXQ~WyJfQ2Z4eVotaVdDSmFXcXJBMDBwS3RnIiwiZ2l2ZW5fbmFtZSIsIkFuYSJd~eyJ0eXAiOiJrYitqd3QiLCJhbGciOiJFUzI1NiJ9.eyJpYXQiOjE3OTIwMTQ2NjYsImF1ZCI6Ing1MDlfaGFzaDpwX29sc3ptOFpOYVhMM1FOcFdWRi1ERFh4d1ZiY1BVVVhsc24zekhIRXRVIiwibm9uY2UiOiJzTDZHbkVESlZxbXRoTUpEVWdhQVY3SGVWTDEtZmxPLVhTQ1RqZFhyWlpVIiwic2RfaGFzaCI6IjJfSmZCNGwzUU1YV1Y4WEkySnFyOUUwT3l6dlVVRXdpNGpBckNEWlgtdDQifQ.123fr5VAyrTvutDS_wn4vYOsylexoxiv8xwaqzTv7Bl4fLKjhqZOIYjZIsQW3eFFfSe5ITiyLViZZGVT5Rpnjg&quot;]}'
+2026-10-14T16:51:06.976-05:00 ERROR 997980 --- [avance-verifier] [3 @coroutine#31] c.o.a.v.p.a.o.sdjwtvc.SdJwtVcValidator   : SD-JWT-VC validation failed: sd-jwt contains an invalid jwt, Signed JWT rejected: Invalid signature or no matching verifier(s) found
+
+SdJwtVerificationException(reason=InvalidJwt(message=null, cause=com.nimbusds.jose.proc.BadJOSEException: Signed JWT rejected: Invalid signature or no matching verifier(s) found))
+	at eu.europa.ec.eudi.sdjwt.SdJwtVerifierKt.asException(SdJwtVerifier.kt:109) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.vc.NimbusSdJwtVcVerifierFactoryKt$sdJwtVcSignatureVerifier$1$1.invokeSuspend(NimbusSdJwtVcVerifierFactory.kt:157) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34) ~[kotlin-stdlib-2.4.0.jar:2.4.0-release-281]
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+
+2026-10-14T16:51:06.978-05:00  WARN 997980 --- [avance-verifier] [3 @coroutine#31] teSdJwtVcOrMsoMdocVerifiablePresentation : Failed to validate SD-JWT VC: [{&quot;error&quot;:&quot;ContainsInvalidJwt&quot;,&quot;description&quot;:&quot;sd-jwt contains an invalid jwt, Signed JWT rejected: Invalid signature or no matching verifier(s) found&quot;}]
+2026-10-14T16:51:06.978-05:00  WARN 997980 --- [avance-verifier] [3 @coroutine#31] EVENTS                                   : Wallet failed to post response. Cause InvalidVpToken(message=[{&quot;error&quot;:&quot;ContainsInvalidJwt&quot;,&quot;description&quot;:&quot;sd-jwt contains an invalid jwt, Signed JWT rejected: Invalid signature or no matching verifier(s) found&quot;}], cause=null) - tx: jzid2OkFQgiQE8AdDphn_f7e1m4AUKWy9gxNxRzyBigzNJiO38wDsesPYQsZAUUj8T1Jv6khHvxEukDPn96knA
+2026-10-14T16:51:06.979-05:00 ERROR 997980 --- [avance-verifier] [3 @coroutine#31] c.org.avance.verifier.api.web.WalletApi  : InvalidVpToken(message=[{&quot;error&quot;:&quot;ContainsInvalidJwt&quot;,&quot;description&quot;:&quot;sd-jwt contains an invalid jwt, Signed JWT rejected: Invalid signature or no matching verifier(s) found&quot;}], cause=null) while handling post of wallet response 
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stdout-una credencial firmada con otra clave distinta de la de su certificado se rechaza()">Copy</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.6.1</a> at 14 oct 2026, 16:51:12</p>
+</div>
+</div>
+</body>
+</html>

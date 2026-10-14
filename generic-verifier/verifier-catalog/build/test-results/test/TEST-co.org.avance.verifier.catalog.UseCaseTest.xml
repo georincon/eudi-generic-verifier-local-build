@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.catalog.UseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:26:10.321Z" hostname="Biogeo" time="0.047">
+  <properties/>
+  <testcase name="el catalogo encuentra casos activos y no los inactivos()" classname="co.org.avance.verifier.catalog.UseCaseTest" time="0.044"/>
+  <testcase name="el DCQL del caso de edad se interpreta con el dominio del protocolo()" classname="co.org.avance.verifier.catalog.UseCaseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

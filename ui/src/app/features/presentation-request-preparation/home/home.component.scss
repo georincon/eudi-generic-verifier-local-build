@@ -1,0 +1,39 @@
+
+:host {
+
+  .button-container {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px 2px;
+  }
+
+  mat-step {
+    div {
+      display: block;
+      padding: 2px;
+    }
+  }
+
+  .presentation-options-container {
+    margin-bottom: 16px;
+    padding: 0px 2px;
+  }
+
+  span#as-pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: monospace;
+    unicode-bidi: isolate;
+    margin: 1em 0;
+  }
+
+  mat-tab-body {
+    div {
+      padding: 0 2px;
+    }
+  }
+  
+}

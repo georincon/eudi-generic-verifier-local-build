@@ -1,0 +1,13 @@
+@use '/src/template' as temp;
+@use '/src/layout-breakpoint' as points;
+
+:host {
+
+    .nested-fields {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1em;
+        border-left: 1px dotted gray;
+        margin-left: 1.2em;
+    }
+}

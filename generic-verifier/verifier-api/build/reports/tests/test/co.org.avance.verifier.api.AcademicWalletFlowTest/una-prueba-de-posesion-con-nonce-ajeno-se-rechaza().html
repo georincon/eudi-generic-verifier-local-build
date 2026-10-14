@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - una prueba de posesion con nonce ajeno se rechaza()</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<a class="breadcrumb" href="../index.html">all</a> &gt; 
+<a class="breadcrumb" href="index.html">co.org.avance.verifier.api.AcademicWalletFlowTest</a> &gt; 
+<span class="breadcrumb">una prueba de posesion con nonce ajeno se rechaza()</span>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="successGroup" href="#">Gradle Test Run :verifier-api:test</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Gradle Test Run :verifier-api:test</h2>
+<h1>una prueba de posesion con nonce ajeno se rechaza()</h1>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="" href="#">summary</a>
+</li>
+<li>
+<a class="" href="#">standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>summary</h2>
+<div>
+<div class="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>skipped</p>
+</div>
+</td>
+<td>
+<div class="infoBox duration">
+<div class="counter">0.044s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="tab">
+<h2>standard output</h2>
+<span class="code">
+<pre id="root-0-test-stdout-una prueba de posesion con nonce ajeno se rechaza()">2026-10-14T16:51:06.910-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#25] EVENTS                                   : Verifier initialized transaction - tx: Hz3nXqJegpFErBjWqIRan6uASew4OBauLmWSlt4Jrhp1BXQhJ-GdGBd8NstAup8QvjnSxzK1ZVWlP-5rABjrIw
+2026-10-14T16:51:06.915-05:00  INFO 997980 --- [avance-verifier] [7 @coroutine#26] c.org.avance.verifier.api.web.WalletApi  : Handling GetRequestObject for qVYr9OkKeLuGVu67J9XT6muEQSYS3SXo5Eb9uXO3aeP_HOqVcSf4EQIKc2FOHj_eH3hXxXSo_059CKm4dSWcxw ...
+2026-10-14T16:51:06.917-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#26] EVENTS                                   : Wallet retrieved Request Object - tx: Hz3nXqJegpFErBjWqIRan6uASew4OBauLmWSlt4Jrhp1BXQhJ-GdGBd8NstAup8QvjnSxzK1ZVWlP-5rABjrIw
+2026-10-14T16:51:06.926-05:00  INFO 997980 --- [avance-verifier] [8 @coroutine#27] c.org.avance.verifier.api.web.WalletApi  : Handling PostWalletResponse ...
+2026-10-14T16:51:06.929-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#27] c.o.a.v.p.port.input.PostWalletResponse  : TransactionId(Hz3nXqJegpFErBjWqIRan6uASew4OBauLmWSlt4Jrhp1BXQhJ-GdGBd8NstAup8QvjnSxzK1ZVWlP-5rABjrIw):: Wallet posted response. 
+VP Token: '{&quot;academic&quot;:[&quot;eyJ4NWMiOlsiTUlJQlh6Q0NBUWFnQXdJQkFnSUdBYUU4WmNCNk1Bb0dDQ3FHU000OUJBTUNNQnN4R1RBWEJnTlZCQU1NRUhSbGMzUXRhWE56ZFdWeUxYSnZiM1F3SGhjTk1qWXhNREUwTWpFMU1EQXpXaGNOTWpZeE1ERTFNakUxTVRBeldqQVpNUmN3RlFZRFZRUUREQTUwWlhOMExXbHpjM1ZsY2kxa2N6QlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJBbFEzengyQi9mMVJHbTg4T0FzQUQ1Ukpqem13dkdTVSs5ZWpZWDBlb3BocVdBMmQ5ZmFId2JaTXVCVUJncnI5RXQ5aThOR3hYTitseXU2R0NBMHl6bWpPREEyTUF3R0ExVWRFd0VCL3dRQ01BQXdEZ1lEVlIwUEFRSC9CQVFEQWdlQU1CWUdBMVVkRVFRUE1BMkNDMmx6YzNWbGNpNTBaWE4wTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUdCenVtVERTdWJ0MmFydmxOZkdlOEMzQjNRR2FIek5aU2MrRkpSMTBBN2dBaUFrQkU3cERHNmNHb2JQclpta3FSWXphQjY3bGl2RzA0TDVPQ0ttUElsSzF3PT0iXSwidHlwIjoiZGMrc2Qtand0IiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2lzc3Vlci50ZXN0IiwiaWF0IjoxNzkyMDE0NjY2LCJleHAiOjE3OTIwMTgyNjYsInZjdCI6InVybjpldWRpOmFjYWRlbWljOmNyZWRlbnRpYWw6MSIsIl9zZF9hbGciOiJzaGEtMjU2IiwiX3NkIjpbIkFJSGozYVBFM19hc0ZTZHU3SHRKSkxET0FJZ1FmT0poTU1fOG1WTXk5czgiLCJfbnZfUl9yMU9GX0E2Z3lsNzhmTW5Ld3JDWjJ5V0E3SDQ0N0dkeVduZHprIiwiVWVEcWdDVG5ZWUFKcng4UHBXRV9WTjVGX1VFRVZ2cUl1SWJZa2oxMHRvZyIsIjI3SFdFQVV6cVBLTmpUQWVPNE56dHlaeUZQUm5YREdDV0lITUhrWlp6R1kiLCJpcWFvVk5nMnFBX2tIb3drejFCVGpuQVZtU3hkcmVuYTNfb2JxU1QxQkVVIiwiSnNpZTRueWJJUFVWMEp5cmJsQWZOV1U0UTJmd1NqRXFlVlc5Mkc3SHgtSSIsIkRKM2E0eFhMN1luQXN4c2pvWmw3RWhUY1JKR1FWcU00bERlZlJhTHJpQmMiXSwiY25mIjp7Imp3ayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6Ino1WTZHSFRrQVNxbW9uNGdyazdoTk9QcjQwWlJsX1FjZ3AtWTA1ekJ6TE0iLCJ5IjoiR1lweTJrYmJrYXV2czBtUkszYjZBcGhNS1FPSkNzWjlYendLN3VIcGlPYyJ9fX0.VPTs6UbX343ftTfEeuhynjMrYxUkFtzTjqnZ49ssjUg1P-VazpQVCuKZ-zzO2c_prtbcZfZ5a7LEHXmMHXep9A~WyJuNWF3Mi10V3d1Z0pGTVU0ejVuRWNRIiwiaXNzdWluZ19pbnN0aXR1dGlvbl9uYW1lIiwiVW5pdmVyc2lkYWQgZGUgUHJ1ZWJhIl0~WyJmLUJYNVUycF9fdk9qbzBBeE05S2dnIiwiYXdhcmRlZF90aXRsZSIsIkluZ2VuaWVybyBkZSBTaXN0ZW1hcyJd~WyJaUjRmMGNhdzUtS3JTa1M4T3NrRjZnIiwicHJvZ3JhbV9uYW1lIiwiSW5nZW5pZXLDrWEgZGUgU2lzdGVtYXMiXQ~WyIteVVuMHV0dXEtQWRxN2Q2dUtPLTNRIiwiYWNhZGVtaWNfc3RhdHVzIiwiR1JBRFVBRE8iXQ~WyJxeHJMcFFrblpoUjFjYmlzUkEwWUFnIiwiZ3JhZHVhdGlvbl9kYXRlIiwiMjAyNC0xMi0xMyJd~WyJoNDZweTd4QnBRbHdvd1dtbVZHSWR3IiwiZmFtaWx5X25hbWUiLCJQw6lyZXoiXQ~WyJBakdXNzVoM1VvNl9uZ2JicnpSTS1RIiwiZ2l2ZW5fbmFtZSIsIkFuYSJd~eyJ0eXAiOiJrYitqd3QiLCJhbGciOiJFUzI1NiJ9.eyJpYXQiOjE3OTIwMTQ2NjYsImF1ZCI6Ing1MDlfaGFzaDpwX29sc3ptOFpOYVhMM1FOcFdWRi1ERFh4d1ZiY1BVVVhsc24zekhIRXRVIiwibm9uY2UiOiJvdHJvLW5vbmNlIiwic2RfaGFzaCI6ImxoVWcwM1BoY3FqV1FTd2lyakQ5MXdDcFQ0akxWTGY1UjR5Q1U0LWFjVmMifQ.3ke09nUQ-tuGQE0AxxyUfoVJZwCv1bkLmg7Vb_6BwvjLcDq_HQtCMo0RlSw_6jQvSbeJac0du0CdpA6bjUzyLA&quot;]}'
+2026-10-14T16:51:06.933-05:00 ERROR 997980 --- [avance-verifier] [3 @coroutine#27] c.o.a.v.p.a.o.sdjwtvc.SdJwtVcValidator   : SD-JWT-VC validation failed: keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT nonce claim value rejected
+
+SdJwtVerificationException(reason=KeyBindingFailed(details=InvalidKeyBindingJwt(message=Could not verify KeyBinding JWT, cause=com.nimbusds.jwt.proc.BadJWTException: JWT nonce claim value rejected)))
+	at eu.europa.ec.eudi.sdjwt.SdJwtVerifierKt.asException(SdJwtVerifier.kt:109) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.SdJwtVerifierKt.asException(SdJwtVerifier.kt:280) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.KeyBindingVerifierOps$Companion$invoke$1.verify_7wntdgo$mustBePresentAndValid(SdJwtVerifier.kt:257) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.KeyBindingVerifierOps$Companion$invoke$1.access$verify_7wntdgo$mustBePresentAndValid(SdJwtVerifier.kt:243) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at eu.europa.ec.eudi.sdjwt.KeyBindingVerifierOps$Companion$invoke$1$verify_7wntdgo$mustBePresentAndValid$1.invokeSuspend(SdJwtVerifier.kt) ~[eudi-lib-jvm-sdjwt-kt-0.20.1.jar:0.20.1]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34) ~[kotlin-stdlib-2.4.0.jar:2.4.0-release-281]
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWithInternal(DispatchedContinuation.kt:384) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.DispatchedCoroutine.afterResume(Builders.common.kt:588) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:101) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:47) ~[kotlin-stdlib-2.4.0.jar:2.4.0-release-281]
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704) ~[kotlinx-coroutines-core-jvm-1.11.0.jar:1.11.0]
+
+2026-10-14T16:51:06.934-05:00  WARN 997980 --- [avance-verifier] [3 @coroutine#27] teSdJwtVcOrMsoMdocVerifiablePresentation : Failed to validate SD-JWT VC: [{&quot;error&quot;:&quot;ContainsInvalidKeyBindingJwt&quot;,&quot;description&quot;:&quot;keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT nonce claim value rejected&quot;}]
+2026-10-14T16:51:06.934-05:00  WARN 997980 --- [avance-verifier] [3 @coroutine#27] EVENTS                                   : Wallet failed to post response. Cause InvalidVpToken(message=[{&quot;error&quot;:&quot;ContainsInvalidKeyBindingJwt&quot;,&quot;description&quot;:&quot;keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT nonce claim value rejected&quot;}], cause=null) - tx: Hz3nXqJegpFErBjWqIRan6uASew4OBauLmWSlt4Jrhp1BXQhJ-GdGBd8NstAup8QvjnSxzK1ZVWlP-5rABjrIw
+2026-10-14T16:51:06.934-05:00 ERROR 997980 --- [avance-verifier] [3 @coroutine#27] c.org.avance.verifier.api.web.WalletApi  : InvalidVpToken(message=[{&quot;error&quot;:&quot;ContainsInvalidKeyBindingJwt&quot;,&quot;description&quot;:&quot;keybinding jwt is not valid, Could not verify KeyBinding JWT, JWT nonce claim value rejected&quot;}], cause=null) while handling post of wallet response 
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stdout-una prueba de posesion con nonce ajeno se rechaza()">Copy</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.6.1</a> at 14 oct 2026, 16:51:12</p>
+</div>
+</div>
+</body>
+</html>

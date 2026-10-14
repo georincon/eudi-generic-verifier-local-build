@@ -1,0 +1,79 @@
+:host {
+  display: block;
+  max-width: 100%;
+}
+
+.request-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.request-options-row {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 16px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.request-options-label {
+  text-align: right;
+  min-width: 0;
+  overflow: hidden;
+
+  span {
+    display: block;
+    font-weight: 500;
+  }
+}
+
+.request-options-helper {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.request-options-control {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.config-option-field {
+  width: 100%;
+}
+
+.registration-certificate-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.registration-certificate-value {
+  font-family: monospace;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 576px) {
+  .request-options-row {
+    grid-template-columns: 1fr;
+  }
+
+  .request-options-label {
+    text-align: left;
+  }
+}

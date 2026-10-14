@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:51:07.061Z" hostname="Biogeo" time="0.663">
+  <properties/>
+  <testcase name="una transaccion desconocida da 404()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.012"/>
+  <testcase name="la pagina de verificacion y sus recursos estaticos se sirven()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.258"/>
+  <testcase name="la pagina de inicio se sirve con CSP estricta y enlaces con el prefijo publico()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.013"/>
+  <testcase name="el estado avanza de esperando a billetera conectada sin dejar fallos()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.024"/>
+  <testcase name="el Request Object que recibiria la billetera pide solo lo necesario y va firmado con nuestro carnet()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.017"/>
+  <testcase name="crear una solicitud exige la cabecera anti-CSRF()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.025"/>
+  <testcase name="las rutas de la API generica del core no existen y se deniegan()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.014"/>
+  <testcase name="crear una solicitud devuelve un QR PNG y un enlace openid4vp()" classname="co.org.avance.verifier.api.AcademicVerifierIntegrationTest" time="0.011"/>
+  <system-out><![CDATA[2026-10-14T16:51:07.062-05:00  INFO 997980 --- [avance-verifier] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [co.org.avance.verifier.api.AcademicVerifierIntegrationTest]: AcademicVerifierIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-14T16:51:07.064-05:00  INFO 997980 --- [avance-verifier] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration co.org.avance.verifier.api.GenericVerifierApplication for test class co.org.avance.verifier.api.AcademicVerifierIntegrationTest
+2026-10-14T16:51:07.064-05:00  INFO 997980 --- [avance-verifier] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [co.org.avance.verifier.api.AcademicVerifierIntegrationTest]: AcademicVerifierIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-14T16:51:07.065-05:00  INFO 997980 --- [avance-verifier] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration co.org.avance.verifier.api.GenericVerifierApplication for test class co.org.avance.verifier.api.AcademicVerifierIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-14T16:51:07.093-05:00  INFO 997980 --- [avance-verifier] [    Test worker] .o.a.v.a.AcademicVerifierIntegrationTest : Starting AcademicVerifierIntegrationTest using Java 25.0.3 with PID 997980 (started by geovani in /home/geovani/Descargas/generic/eudi-generic-verifier-local-build/generic-verifier/verifier-api)
+2026-10-14T16:51:07.093-05:00  INFO 997980 --- [avance-verifier] [    Test worker] .o.a.v.a.AcademicVerifierIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-14T16:51:07.178-05:00  INFO 997980 --- [avance-verifier] [    Test worker] c.o.a.v.api.GenericVerifierApplication   : Enabling Status List Token validations
+2026-10-14T16:51:07.226-05:00  INFO 997980 --- [avance-verifier] [    Test worker] c.o.a.v.api.GenericVerifierApplication   : Will try to load Keystore from: 'file:/tmp/verifier-test-pki10037755062307005712/verifier-keystore.p12'
+2026-10-14T16:51:07.263-05:00  INFO 997980 --- [avance-verifier] [    Test worker] c.o.a.v.api.GenericVerifierApplication   : Using Attestation Classifications: AttestationClassifications(pid=AttestationIdentifiers(vcts=[urn:eudi:pid:1], docTypes=[eu.europa.ec.eudi.pid.1]), qeaa=AttestationIdentifiers(vcts=[], docTypes=[]), pubeaa=AttestationIdentifiers(vcts=[urn:eudi:academic:credential:1], docTypes=[]), eaa=[])
+2026-10-14T16:51:07.263-05:00  INFO 997980 --- [avance-verifier] [    Test worker] c.o.a.v.api.GenericVerifierApplication   : Using Civica trust lists: CivicaTlLists(pid=https://civica.avance.org.co/tl-publisher/TL/PID/current.json, pubEaa=https://civica.avance.org.co/tl-publisher/TL/PUBEAA/current.json, walletProviders=null, wrpac=null, wrprc=null) (signer pins: 1)
+2026-10-14T16:51:07.305-05:00  INFO 997980 --- [avance-verifier] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-14T16:51:07.334-05:00  INFO 997980 --- [avance-verifier] [    Test worker] o.s.boot.reactor.netty.NettyWebServer    : Netty started on port 37167 (http)
+2026-10-14T16:51:07.337-05:00  INFO 997980 --- [avance-verifier] [    Test worker] o.s.s.config.TaskSchedulerRouter         : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2026-10-14T16:51:07.338-05:00  INFO 997980 --- [avance-verifier] [    Test worker] .o.a.v.a.AcademicVerifierIntegrationTest : Started AcademicVerifierIntegrationTest in 0.268 seconds (process running for 4.726)
+2026-10-14T16:51:07.638-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#44] EVENTS                                   : Verifier initialized transaction - tx: kdpvq-8mg_OwB_ilsyWDKfLr-CuvTCUxct5CpNsQNZnHV8pbdEmX5-bHfivlhHCvu9Dx1_LYrGDzxM_yn4cPZA
+2026-10-14T16:51:07.646-05:00  INFO 997980 --- [avance-verifier] [3 @coroutine#46] c.org.avance.verifier.api.web.WalletApi  : Handling GetRequestObject for UcTzb_QmzmcNtoKSqdReS27H45YIfZfzwVMPLhniFBZfLpsPtzHfHPnuBLbfYsHlCqQvL-2flvCtRXUXpps65g ...
+2026-10-14T16:51:07.648-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#46] EVENTS                                   : Wallet retrieved Request Object - tx: kdpvq-8mg_OwB_ilsyWDKfLr-CuvTCUxct5CpNsQNZnHV8pbdEmX5-bHfivlhHCvu9Dx1_LYrGDzxM_yn4cPZA
+2026-10-14T16:51:07.663-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#48] EVENTS                                   : Verifier initialized transaction - tx: ODOwVe7eeapm-PkMBPo0kq7AtgV2pJbePkDMqiL9KRzAoRE4cBTYh09E5PW7OpoH9RJ6xkisjAR4Sf_qcTh8Eg
+2026-10-14T16:51:07.666-05:00  INFO 997980 --- [avance-verifier] [6 @coroutine#49] c.org.avance.verifier.api.web.WalletApi  : Handling GetRequestObject for FFWrwE5c-tW3GX8TTFd5ut5Cow_uKk_B2V6B1JeehxCb5P1Peuk14L7EAeSCl_Zs8k1egO7QO7jGgW3q8D_-IA ...
+2026-10-14T16:51:07.668-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#49] EVENTS                                   : Wallet retrieved Request Object - tx: ODOwVe7eeapm-PkMBPo0kq7AtgV2pJbePkDMqiL9KRzAoRE4cBTYh09E5PW7OpoH9RJ6xkisjAR4Sf_qcTh8Eg
+2026-10-14T16:51:07.721-05:00  INFO 997980 --- [avance-verifier] [1 @coroutine#51] EVENTS                                   : Verifier initialized transaction - tx: Rit6vYoqUbsIlsTj9oxnf2YoqNiN3qRl6d8IcuC0cHQl4tbdY_sscv6-f112YVOnzRcV92BXlQ0sC5p0-G24IQ
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.protocol.domain.rqes.QesApprovalSerializationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:45:42.388Z" hostname="Biogeo" time="0.048">
+  <properties/>
+  <testcase name="test QesApproval JSON structure()" classname="co.org.avance.verifier.protocol.domain.rqes.QesApprovalSerializationTest" time="0.041"/>
+  <testcase name="test QesApproval deserialization from sample JSON()" classname="co.org.avance.verifier.protocol.domain.rqes.QesApprovalSerializationTest" time="0.003"/>
+  <testcase name="test QesApproval serialization and deserialization()" classname="co.org.avance.verifier.protocol.domain.rqes.QesApprovalSerializationTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

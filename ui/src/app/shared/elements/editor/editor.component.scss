@@ -1,0 +1,41 @@
+@use '/src/template' as temp;
+@use '/src/layout-breakpoint' as points;
+@use "sass:map";
+
+:host {
+    .vc-container-editor {
+        background-color: temp.$backgroundPaper;
+        border-radius: 16px;
+        max-height: temp.$body-height;
+        max-width: inherit;
+        min-height: inherit;
+        min-width: inherit;
+        overflow: auto auto;
+        padding: 16px;
+        position: relative;
+        width: temp.$body-width;
+
+        textarea {
+            height: 100%;
+            resize: none;
+            width: 100%;
+        }
+    }
+    @media (max-width: map.get(points.$breakpoints, xs)) {
+        .vc-container-editor {
+            min-width: 90%;
+            width: 90%;
+        }
+    }
+    @media (max-width: map.get(points.$breakpoints, sm))  and  (min-width: map.get(points.$breakpoints, xs1)) {
+        .vc-container-editor {
+            min-width: temp.$body-width-sm;
+            width: temp.$body-width-sm;
+        }
+    }
+    @media (max-width: map.get(points.$breakpoints, md)) and (min-width: map.get(points.$breakpoints, sm)){
+        .vc-container-editor {
+            width: temp.$body-width-md;
+        }
+    }
+}

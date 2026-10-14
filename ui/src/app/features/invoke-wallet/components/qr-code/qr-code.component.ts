@@ -1,0 +1,146 @@
+import {ChangeDetectionStrategy, Component, EventEmitter, Injector, OnDestroy, OnInit, Output} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SharedModule} from '@shared/shared.module';
+import {interval, ReplaySubject, Subject, take, takeUntil} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {NavigateService} from '@core/services/navigate.service';
+import {DeviceDetectorService} from '@core/services/device-detector.service';
+import {LocalStorageService} from '@core/services/local-storage.service';
+import * as constants from '@core/constants/general';
+import {ACTIVE_TRANSACTION} from '@core/constants/general';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {OpenLogsComponent} from '@shared/elements/open-logs/open-logs.component';
+import {VerifierEndpointService} from "@core/services/verifier-endpoint.service";
+import {WalletResponse} from "@core/models/WalletResponse";
+import {ConcludedTransaction} from "@core/models/ConcludedTransaction";
+import {QRCodeComponent} from 'angularx-qrcode';
+import {SafeUrl} from "@angular/platform-browser";
+import {ActiveTransaction} from "@core/models/ActiveTransaction";
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {RedirectsTransaction} from "@core/models/InitializedTransaction";
+
+@Component({
+    selector: 'vc-qr-code',
+    imports: [
+        CommonModule,
+        SharedModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatCardModule,
+        MatDividerModule,
+        MatProgressBarModule,
+        QRCodeComponent
+    ],
+    templateUrl: './qr-code.component.html',
+    styleUrls: ['./qr-code.component.scss'],
+    providers: [VerifierEndpointService],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class QrCodeComponent implements OnInit, OnDestroy {
+
+  private readonly deviceDetectorService!: DeviceDetectorService;
+  private readonly localStorageService!: LocalStorageService;
+
+  destroy$ = new Subject();
+  stopPlay$ = new ReplaySubject(1);
+
+  isCrossDevice = true;
+  transaction!: ActiveTransaction;
+
+  deepLinkTxt!: string;
+
+  qrCodeDownloadLink!: SafeUrl;
+  readonly dialog!: MatDialog;
+
+  @Output() transactionConcludedEvent = new EventEmitter<ConcludedTransaction>();
+
+  emitTransactionConcludedEvent(concludedTransaction: ConcludedTransaction) {
+    this.transactionConcludedEvent.emit(concludedTransaction);
+  }
+
+  constructor(
+    private readonly verifierEndpointService: VerifierEndpointService,
+    private readonly navigateService: NavigateService,
+    private readonly injector: Injector,
+  ) {
+    this.deviceDetectorService = this.injector.get(DeviceDetectorService);
+    this.localStorageService = this.injector.get(LocalStorageService);
+    this.dialog = this.injector.get(MatDialog);
+    this.isCrossDevice = this.deviceDetectorService.isDesktop();
+  }
+
+  ngOnInit(): void {
+    this.transaction = JSON.parse(
+      this.localStorageService.get(ACTIVE_TRANSACTION)!
+    );
+    if (!this.transaction) {
+      this.navigateService.goHome();
+    } else {
+      const redirectsTransaction = this.transaction.initialized_transaction as RedirectsTransaction
+      this.deepLinkTxt = redirectsTransaction.authorization_request_uri;
+      if (this.isCrossDevice) {
+        this.pollingRequest(this.transaction.initialized_transaction.transaction_id);
+      }
+    }
+  }
+
+  onChangeURL(url: SafeUrl) {
+    this.qrCodeDownloadLink = url;
+  }
+
+  private pollingRequest(transaction_id: string) {
+    const source = interval(2000);
+    source
+      .pipe(
+        takeUntil(this.stopPlay$),
+        take(60)
+      )
+      .subscribe(() => {
+        this.verifierEndpointService.getWalletResponse(transaction_id)
+          .pipe(
+            takeUntil(this.stopPlay$),
+            map((data) => data as WalletResponse),
+          )
+          .subscribe(
+            (res: WalletResponse) => {
+              this.stopPlay$.next(1);
+              let concludedTransaction = this.concludeTransaction(res);
+              this.emitTransactionConcludedEvent(concludedTransaction)
+            },
+          );
+      });
+  }
+
+  private concludeTransaction(response: WalletResponse): ConcludedTransaction {
+    let concludedTransaction = {
+      transactionId: this.transaction.initialized_transaction.transaction_id,
+      presentationQuery: this.transaction.initialization_request!!.dcql_query,
+      walletResponse: response,
+      nonce: this.transaction.initialization_request.nonce
+    }
+    // Clear local storage
+    this.localStorageService.remove(constants.ACTIVE_TRANSACTION);
+
+    return concludedTransaction;
+  }
+
+  openLogs() {
+    this.dialog.open(OpenLogsComponent, {
+      data: {
+        transactionId: this.transaction.initialized_transaction.transaction_id,
+        label: 'Show Logs',
+        isInspectLogs: false
+      },
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next('');
+    this.destroy$.complete();
+    this.stopPlay$.next('');
+    this.stopPlay$.complete();
+  }
+}

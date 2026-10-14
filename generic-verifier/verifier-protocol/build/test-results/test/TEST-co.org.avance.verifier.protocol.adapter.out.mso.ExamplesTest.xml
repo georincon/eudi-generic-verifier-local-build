@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.protocol.adapter.out.mso.ExamplesTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:45:42.019Z" hostname="Biogeo" time="0.338">
+  <properties/>
+  <testcase name="waltId example is valid, skipping x5c checks()" classname="co.org.avance.verifier.protocol.adapter.out.mso.ExamplesTest" time="0.317"/>
+  <testcase name="athlete example is valid, skipping x5c checks()" classname="co.org.avance.verifier.protocol.adapter.out.mso.ExamplesTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

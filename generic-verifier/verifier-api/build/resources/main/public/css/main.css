@@ -1,0 +1,263 @@
+/* ============================================================
+   Verificador de credenciales academicas - hoja de estilos
+   Derivada del diseno del uis-issuer (verde #006837, azul #066aab,
+   navy #1a237e, dorado #f9a825). Sin estilos en linea: la CSP no los permite.
+   ============================================================ */
+
+/* --- Original EUDI styles (kept for backward compatibility) --- */
+.eudiw-logo {
+    min-width: 150px;
+    min-height: 150px;
+}
+
+.qr-code {
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.credentials-offer-uri {
+    word-break: break-all;
+}
+
+/* --- Marca --- */
+:root {
+    --cv-green: #006837;
+    --cv-green-dark: #004d2c;
+    --cv-green-light: #e8f5e9;
+    --cv-blue: #066aab;
+    --cv-blue-dark: #04507a;
+    --cv-blue-light: #e3f2fd;
+    --cv-navy: #1a237e;
+    --cv-navy-dark: #0d1547;
+    --cv-gold: #f9a825;
+    --cv-gray: #f5f5f5;
+    --cv-text: #333333;
+    --cv-text-light: #666666;
+    --cv-border: #e0e0e0;
+    --cv-success: #2e7d32;
+    --cv-danger: #c62828;
+    --cv-warning: #f57f17;
+}
+
+/* --- Header --- */
+.cv-header {
+    background: linear-gradient(135deg, var(--cv-green) 0%, var(--cv-blue) 100%);
+    color: white;
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 104, 55, 0.15);
+}
+
+.cv-logo {
+    max-height: 80px;
+    width: auto;
+}
+
+.cv-logo-large {
+    max-height: 100px;
+    width: auto;
+}
+
+/* --- Buttons --- */
+.btn-cv {
+    background-color: var(--cv-green);
+    border-color: var(--cv-green);
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-cv:hover {
+    background-color: var(--cv-green-dark);
+    border-color: var(--cv-green-dark);
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 104, 55, 0.3);
+}
+
+.btn-cv:disabled {
+    background-color: #9e9e9e;
+    border-color: #9e9e9e;
+    color: #ffffff !important;
+    opacity: 0.7;
+}
+
+.btn-cv-blue {
+    background-color: var(--cv-blue);
+    border-color: var(--cv-blue);
+    color: #ffffff !important;
+}
+
+.btn-cv-blue:hover {
+    background-color: var(--cv-blue-dark);
+    border-color: var(--cv-blue-dark);
+    color: #ffffff !important;
+}
+
+.btn-cv-outline {
+    background-color: transparent;
+    border-color: var(--cv-green);
+    color: var(--cv-green) !important;
+}
+
+.btn-cv-outline:hover {
+    background-color: var(--cv-green);
+    color: #ffffff !important;
+}
+
+/* --- Cards --- */
+.lookup-card {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--cv-border);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+}
+
+.program-card {
+    border: 2px solid var(--cv-border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #ffffff;
+}
+
+.program-card:hover {
+    border-color: var(--cv-green);
+    box-shadow: 0 4px 12px rgba(0, 104, 55, 0.12);
+    transform: translateY(-2px);
+}
+
+.program-card.selected {
+    border-color: var(--cv-green);
+    background-color: var(--cv-green-light);
+    box-shadow: 0 4px 16px rgba(0, 104, 55, 0.2);
+}
+
+.program-card input[type="radio"] {
+    display: none;
+}
+
+/* --- Student Info Bar --- */
+.student-info {
+    background-color: var(--cv-gray);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--cv-green);
+}
+
+/* --- QR Code Container --- */
+.qr-container {
+    background: white;
+    border: 2px solid var(--cv-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: inline-block;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Badges --- */
+.badge-graduado {
+    background-color: var(--cv-success);
+    color: #ffffff;
+}
+
+.badge-activo {
+    background-color: var(--cv-blue);
+    color: #ffffff;
+}
+
+.badge-retirado {
+    background-color: var(--cv-danger);
+    color: #ffffff;
+}
+
+.badge-pausa {
+    background-color: var(--cv-warning);
+    color: #ffffff;
+}
+
+/* --- Forms --- */
+.form-control:focus {
+    border-color: var(--cv-green);
+    box-shadow: 0 0 0 0.2rem rgba(0, 104, 55, 0.15);
+}
+
+.form-label strong {
+    color: var(--cv-text);
+}
+
+/* --- Alerts --- */
+.alert-info {
+    background-color: var(--cv-blue-light);
+    border-color: var(--cv-blue);
+    color: var(--cv-blue-dark);
+}
+
+/* --- Links --- */
+a {
+    color: var(--cv-blue);
+}
+
+a:hover {
+    color: var(--cv-green);
+}
+
+/* --- Section Titles --- */
+.section-title {
+    color: var(--cv-green);
+    border-bottom: 2px solid var(--cv-green);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+/* --- Logout button (fixed top-right corner) --- */
+.logout-btn-corner {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+}
+
+/* --- Footer accent --- */
+.cv-footer-accent {
+    height: 4px;
+    background: linear-gradient(90deg, var(--cv-green) 0%, var(--cv-blue) 50%, var(--cv-gold) 100%);
+    border-radius: 2px;
+    margin-top: 24px;
+}
+
+
+/* --- Verificador: pagina y estados --- */
+body { background: #fafbfc; color: var(--cv-text); }
+.cv-title { color: var(--cv-green); font-weight: 700; }
+.cv-subtitle { color: var(--cv-blue); font-weight: 500; }
+.cv-brand-mark { width: 64px; height: 64px; }
+.cv-hidden { display: none !important; }
+.cv-list { padding-left: 1.2rem; margin-bottom: 0; }
+.cv-list li { margin-bottom: 4px; }
+.cv-pill { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: .85rem; font-weight: 600; background: var(--cv-blue-light); color: var(--cv-blue-dark); }
+.cv-pill.ok { background: var(--cv-green-light); color: var(--cv-green-dark); }
+.cv-spinner { width: 1.1rem; height: 1.1rem; border: 3px solid var(--cv-border); border-top-color: var(--cv-green); border-radius: 50%; display: inline-block; animation: cv-spin 1s linear infinite; vertical-align: -3px; margin-right: 8px; }
+@keyframes cv-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cv-spinner { animation: none; } }
+.cv-result { border-left: 6px solid var(--cv-border); border-radius: 8px; padding: 20px 24px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.cv-result.accredited { border-left-color: var(--cv-success); }
+.cv-result.partial { border-left-color: var(--cv-warning); }
+.cv-result.failed { border-left-color: var(--cv-danger); }
+.cv-result h3 { margin-top: 0; }
+.cv-attr { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: 6px 16px; margin: 16px 0 0; }
+.cv-attr dt { color: var(--cv-text-light); font-weight: 600; }
+.cv-attr dd { margin: 0; word-break: break-word; }
+@media (max-width: 575px) { .cv-attr { grid-template-columns: 1fr; } .cv-attr dt { margin-top: 8px; } }
+.qr-code { width: 100%; max-width: 300px; height: auto; }

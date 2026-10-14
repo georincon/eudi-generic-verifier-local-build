@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.catalog.AcademicTitleTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:26:10.230Z" hostname="Biogeo" time="0.089">
+  <properties/>
+  <testcase name="el DCQL se interpreta con el dominio del protocolo()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.067"/>
+  <testcase name="el DCQL pide solo los atributos necesarios y ninguno sensible()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.004"/>
+  <testcase name="no se muestran atributos que no se pidieron aunque la credencial los traiga()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.002"/>
+  <testcase name="el caso de uso se clasifica como PubEAA con descarte de datos()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.002"/>
+  <testcase name="una credencial sin titulo o sin institucion es incompleta()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.001"/>
+  <testcase name="un graduado acredita el titulo()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.001"/>
+  <testcase name="un estudiante activo tiene credencial valida pero no acredita titulo()" classname="co.org.avance.verifier.catalog.AcademicTitleTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.org.avance.verifier.protocol.port.input.SdJwtVcValidationErrorCodeTOTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-14T21:45:42.558Z" hostname="Biogeo" time="0.002">
+  <properties/>
+  <testcase name="every validation error code has a counterpart in the wire enum()" classname="co.org.avance.verifier.protocol.port.input.SdJwtVcValidationErrorCodeTOTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
